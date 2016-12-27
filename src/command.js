@@ -99,7 +99,7 @@ export function stopPullDownRefresh(data) {
 // publish event to views
 export function publish(data) {
   let all_ids = viewManage.getViewIds()
-  let ids = toNumber(data.webviewIds) || all_ids
+  let ids = toNumber(data.webviewIds) || toNumber(all_ids)
   data.act = 'sendMsgFromAppService'
   let obj = {
     msg: data,
