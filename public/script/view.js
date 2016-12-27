@@ -3862,7 +3862,7 @@ var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator 
   "wechatdevtools" === wx.getPlatform() && (window.addEventListener("DOMContentLoaded", function() {
     var url = "https://map.qq.com/api/js?v=2.exp&callback=__map_jssdk_init"
     if (parent.__ip__) {
-      url = 'http://' + parent.__ip__ + ':' + location.port + '/remoteProxy?url='+encodeURIComponent(url)+'&cache=1'
+      url = 'http://' + location.host + '/remoteProxy?url='+encodeURIComponent(url)+'&cache=1'
 
     }
     var e = document.createElement("script");
