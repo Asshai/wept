@@ -3860,8 +3860,13 @@ var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator 
 };
 ! function() {
   "wechatdevtools" === wx.getPlatform() && (window.addEventListener("DOMContentLoaded", function() {
+    var url = "https://map.qq.com/api/js?v=2.exp&callback=__map_jssdk_init"
+    if (parent.__ip__) {
+      url = 'http://' + parent.__ip__ + ':' + location.port + '/remoteProxy?url='+encodeURIComponent(url)+'&cache=1'
+
+    }
     var e = document.createElement("script");
-    e.type = "text/javascript", e.src = "https://map.qq.com/api/js?v=2.exp&callback=__map_jssdk_init", document.body.appendChild(e)
+    e.type = "text/javascript", e.src = url, document.body.appendChild(e)
   }), window.__map_jssdk_id = 0, window.__map_jssdk_ready = !1, window.__map_jssdk_callback = [], window.__map_jssdk_init = function() {
     for (__map_jssdk_ready = !0; __map_jssdk_callback.length;) {
       var e = __map_jssdk_callback.pop();

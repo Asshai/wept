@@ -99,10 +99,12 @@ class ImagesPreview extends Emitter {
   }
 
   ontouchmove(e) {
+    console.log('touchmove', e);
     if (e.touches.length > 1 || this.move == null) return
     e.preventDefault()
     e.stopPropagation()
     let touch = e.touches[0]
+    console.log('touchmove', touch)
     this.move(e, touch)
   }
 
